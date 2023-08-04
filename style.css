@@ -1,74 +1,45 @@
-*{
-    font-family: 'Poppins', sans-serif;
-}
-.background{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgb(245, 194, 194),rgb(219, 207, 207));
-}
-.container{
-   position: relative;
-   background-color: rgb(255, 255, 255);
-   border-radius: 10px;
-   padding-bottom: 0px;
-   max-width: 480px;
-   width:fit-content;
-   height: max-content;
-   top: 6%;
-   padding:2rem ;
-}
+* {
+    margin: 0;
+    padding: 0;
 
-.fa-bolt{
-    margin-left: 15px;
-}
-
-img{
-    margin-top: 10px;
-    margin-bottom: -8px;
-    width: 125px;
-}
-.fa-location-arrow{
-    margin-left: 5px;
-   
 }
 
 
-.wind.row{
-width: 170px;
-margin-left: 40px;
-border-right: 1px solid rgb(173, 170, 170);
+
+.weather-search,
+.Weather-info {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
 }
 
-.windimg{
-    width: 50px;
-   
+#weathersearch-container {
+    border-radius: 20px;
+    background-color: whitesmoke;
+    max-width: 500px;
+    padding: 30px;
 }
 
-.humidityPic{
-    position:relative;
-    width: 35px;
-    bottom: 28px;
+#location-button {
+    border-top: 1px solid rgb(184, 181, 181);
+    padding: 20px;
+    margin: 30px 0px 10px 35px;
 }
 
-#marginLeft{
-  
-    border-left: 1px solid rgb(190, 186, 186);
+button,
+i {
+    cursor: pointer;
 }
 
-#humiditySection{
-
-  max-width: fit-content;
-  padding-left: 60px;
+#temperature {
+    font-size: 60px;
+    font-weight: 500;
 }
 
-#logo{
-    position: relative;
-    bottom: 10px;
-    width: 45px;
-    animation: move 5s infinite linear;
-}
-
-@keyframes move{
-    100% {transform: rotate(360deg);}
+.bottom{
+    display: flex;
+    justify-content: space-between;
 }
