@@ -13,4 +13,3 @@ let backbutton = document.getElementById('back-button').addEventListener('click'
     section_weather_info.classList.add('d-none')
     section_weather_search.classList.remove('d-none')
 });
-
