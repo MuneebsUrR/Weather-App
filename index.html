@@ -3,73 +3,83 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Weather App</title>
+
+    <!-- External CSS libraries -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 
-<body style="background-color: #62a1ff;">
+<body style="background-color: rgb(236, 110, 76);">
 
-    <section class="weather-search " id="weather-search">
+    <!-- Weather search section -->
+    <section class="weather-search" id="weather-search">
         <div class="container" id="weathersearch-container">
-            <h3 class="b">Weather App</h3>
+            <h3 class="b">Weather App <img src="./icons/logo.png" class="img-fluid" width="50px" alt="logo" id="logoPic"></h3>
             <hr>
+            <!-- City search input field and search button -->
             <div class="row my-4 mb-3">
                 <div class="col-9">
-                    <input type="text" placeholder="Enter your city!" class="form-control" id="cityName" required>
+                    <input type="text" placeholder="Enter your city!" class="form-control" id="cityName" autocomplete="off" required>
                 </div>
                 <div class="col-3">
-                    <button class="btn btn-primary" id="search-location-btn">Search</button>
+                    <button class="btn btn-dark" id="search-location-btn">Search</button>
                 </div>
-
             </div>
 
+            <!-- Geolocation button -->
             <div class="col-10" id="location-button">
-                <button class="btn btn-primary w-100">Get Current Location<i class="fa fa-location-arrow mx-2" aria-hidden="true"></i></button>
+                <button class="btn btn-dark w-100" id="geolocation">Get Current Location<i class="fa fa-location-arrow mx-2" aria-hidden="true"></i></button>
             </div>
-
         </div>
     </section>
 
+    <!-- Weather information section -->
     <section class="Weather-info d-none" id="Weather-info">
         <div class="container" id="weathersearch-container">
-            <h3 > <i class="fa fa-arrow-left" aria-hidden="true" id="back-button" style="color: #62a1ff;"></i> Weather App</h3>
+            <h3><i class="fa fa-arrow-left" aria-hidden="true" id="back-button"></i> Weather App</h3>
             <hr>
+            <!-- Weather details display area -->
             <div class="row justify-content-center text-center">
-                <img src="./icons/clear.png" class="img-fluid" alt="weather condition img" style="width:10pc;">
-                <p id="temperature" style="margin: 0%;">33<em style="font-weight: 350">°C</em></p>
-                <p class="fs-6" id="weather-type" style="margin: 0%;">Clear Sky</p>
-                <p class="fs-5" id="location"><i class="fa fa-map-marker" aria-hidden="true"></i> Pakistan,Lahore</p>
+                <img src="./icons/clear.png" class="img-fluid" alt="weather condition img" style="width:10pc;" id="weatherimg">
+                <div class="row">
+                    <div class="col-12">
+                        <span id="temperature" style="margin: 0%;"></span>
+                        <span class="fs-1" style="font-weight: 480">°C</span>
+                    </div>
+                </div>
+                <p class="fs-5" id="weather-type" style="margin: 0%;"></p>
+                <div class="row">
+                    <div class="col-12">
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span class="fs-5" id="location"></span>
+                    </div>
+                </div>
             </div>
             <hr>
+            <!-- Additional weather details -->
             <div class="bottom">
                 <div class="column1 text-center mx-4">
-                    <span><i class="fa fa-thermometer-empty fs-3" aria-hidden="true" style="color:#62a1ff;"></i></span>
-                    <span id="FeelsLike" class="fs-3">14</span>
+                    <span><i class="fa fa-thermometer-empty fs-3" aria-hidden="true"></i></span>
+                    <span id="FeelsLike" class="fs-3"></span>
                     <span class="fs-3">°C</span>
-                    <p class="fs-5 " style="margin: 0%;">Feels Like</p>
+                    <p class="fs-5" style="margin: 0%;">Feels Like</p>
                 </div>
                 <div class="column2 text-center mx-4">
-                    <span><i class="fa fa-tint fs-3" aria-hidden="true" style="color:#62a1ff;"></i></span>
-                    <span id="Humidity" class="fs-3">74</span>
+                    <span><i class="fa fa-tint fs-3" aria-hidden="true"></i></span>
+                    <span id="Humidity" class="fs-3"></span>
                     <span class="fs-3">%</span>
                     <p class="fs-5" style="margin: 0%;">Humidity</p>
                 </div>
             </div>
-
-
         </div>
     </section>
 
+    <!-- JavaScript scripts -->
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 
 </html>
